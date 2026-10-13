@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1016"/>
+      <stop offset="50%" stop-color="#121e29"/>
+      <stop offset="100%" stop-color="#070a0e"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f59b"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#00f59b" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f59b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#00f59b" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <circle cx="250" cy="220" r="160" fill="url(#glow)"/>
+
+  <!-- Geometric Grid Accent -->
+  <g stroke="rgba(0, 245, 155, 0.12)" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="600"/>
+    <line x1="150" y1="0" x2="150" y2="600"/>
+    <line x1="250" y1="0" x2="250" y2="600"/>
+    <line x1="350" y1="0" x2="350" y2="600"/>
+    <line x1="450" y1="0" x2="450" y2="600"/>
+    <line x1="0" y1="100" x2="500" y2="100"/>
+    <line x1="0" y1="200" x2="500" y2="200"/>
+    <line x1="0" y1="300" x2="500" y2="300"/>
+    <line x1="0" y1="400" x2="500" y2="400"/>
+    <line x1="0" y1="500" x2="500" y2="500"/>
+  </g>
+
+  <!-- Stylized Digital Avatar Body -->
+  <g>
+    <!-- Shoulders / Torso -->
+    <path d="M110 540 C110 440, 160 400, 250 400 C340 400, 390 440, 390 540 Z" fill="#18232f" stroke="rgba(0,245,155,0.4)" stroke-width="2"/>
+    <path d="M190 400 L250 490 L310 400" fill="none" stroke="url(#neon)" stroke-width="3"/>
+    
+    <!-- Neck -->
+    <path d="M215 330 L215 410 L285 410 L285 330 Z" fill="#d1d5db" opacity="0.9"/>
+    
+    <!-- Head / Face -->
+    <ellipse cx="250" cy="260" rx="75" ry="95" fill="#e5e7eb"/>
+    
+    <!-- Hair Modern Creative Cut -->
+    <path d="M165 240 C165 150, 210 130, 260 130 C320 130, 345 170, 340 230 C325 210, 300 200, 275 200 C220 200, 185 220, 165 240 Z" fill="#0b0f14"/>
+    <path d="M160 250 Q180 180 270 160 Q340 180 340 250 Q290 200 250 205 Q200 210 160 250 Z" fill="url(#neon)" opacity="0.85"/>
+
+    <!-- Creative Cyberpunk Glasses / HUD Visor -->
+    <rect x="180" y="240" width="140" height="36" rx="10" fill="#091017" stroke="url(#neon)" stroke-width="3" filter="url(#shadow)"/>
+    <line x1="195" y1="258" x2="305" y2="258" stroke="#00f59b" stroke-width="2" stroke-dasharray="8 4"/>
+    <circle cx="210" cy="258" r="4" fill="#00f59b"/>
+    <circle cx="290" cy="258" r="4" fill="#00f59b"/>
+
+    <!-- Earphones / Headset -->
+    <rect x="160" y="245" width="16" height="35" rx="6" fill="#00f59b"/>
+    <rect x="324" y="245" width="16" height="35" rx="6" fill="#00f59b"/>
+  </g>
+
+  <!-- Creative Badge overlay -->
+  <g transform="translate(130, 480)">
+    <rect width="240" height="52" rx="26" fill="rgba(10, 16, 22, 0.9)" stroke="url(#neon)" stroke-width="1.5"/>
+    <circle cx="28" cy="26" r="10" fill="#00f59b"/>
+    <text x="50" y="32" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="14">CREATIVE MEDIA ARTIST</text>
+  </g>
+</svg>
+

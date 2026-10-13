@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g3d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061219"/>
+      <stop offset="100%" stop-color="#03251c"/>
+    </linearGradient>
+    <linearGradient id="neonG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f59b"/>
+      <stop offset="100%" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g3d)"/>
+  <!-- Isometric Grid / 3D wireframe cube -->
+  <g stroke="rgba(0, 245, 155, 0.25)" stroke-width="1.5" fill="none">
+    <path d="M50 350 L300 200 L550 350" />
+    <path d="M100 320 L300 220 L500 320" />
+    <path d="M150 290 L300 240 L450 290" />
+  </g>
+  <!-- 3D Geometric Cube -->
+  <g transform="translate(300, 190)">
+    <!-- Top Face -->
+    <polygon points="0,-90 85,-40 0,10 -85,-40" fill="rgba(0, 245, 155, 0.35)" stroke="#00f59b" stroke-width="2"/>
+    <!-- Left Face -->
+    <polygon points="-85,-40 0,10 0,110 -85,60" fill="rgba(16, 185, 129, 0.2)" stroke="#00f59b" stroke-width="2"/>
+    <!-- Right Face -->
+    <polygon points="0,10 85,-40 85,60 0,110" fill="rgba(5, 150, 105, 0.5)" stroke="#00f59b" stroke-width="2"/>
+    <!-- Center Orb -->
+    <circle cx="0" cy="10" r="30" fill="url(#neonG)" filter="drop-shadow(0 0 15px #00f59b)"/>
+  </g>
+  <text x="30" y="50" fill="#00f59b" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" letter-spacing="2">3D ASSET &amp; ENVIRONMENT</text>
+  <text x="30" y="80" fill="#ffffff" font-family="'Prompt', sans-serif" font-weight="700" font-size="22">Cyber City 3D Render</text>
+</svg>
+

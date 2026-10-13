@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ผลงานสร้างสรรค์ (Portfolio) | Maxswit สื่อนฤมิต</title>
+  <meta name="description" content="คลังผลงานสื่อนฤมิต (Creative Media) โดย Maxswit - 3D Animation, Motion Graphics, UI/UX Design, Virtual Production และ Game Art">
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Lighting Effects -->
+  <div class="bg-ambient">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+
+  <!-- =========================================================================
+       Navigation Bar
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon">
+          <i class="fas fa-shapes"></i>
+        </div>
+        <span>MAXSWIT<span class="green-highlight">.MEDIA</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNav" aria-controls="portfolioNav" aria-expanded="false" aria-label="สลับแถบเมนู">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="portfolioNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="education.html"><i class="fas fa-graduation-cap me-1"></i> Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="portfolio.html"><i class="fas fa-layer-group me-1"></i> Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="activity.html"><i class="fas fa-calendar-check me-1"></i> Activity</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-paper-plane me-1"></i> Contact</a>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a href="contact.html" class="btn-creative-primary py-2 px-3 fs-6">
+              <span>ติดต่อ</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       Main Content: Portfolio Showcase
+       ========================================================================= -->
+  <main class="py-5">
+    <div class="container">
+      
+      <!-- Page Header -->
+      <div class="section-header">
+        <div class="section-badge"><i class="fas fa-layer-group"></i> CREATIVE MEDIA WORKS</div>
+        <h1 class="section-title">คลังผลงาน <span class="green-highlight">สื่อนฤมิต</span></h1>
+        <p class="section-subtitle">
+          รวบรวมชิ้นงานออกแบบที่ผสมผสานศาสตร์แห่งสุนทรียะและเทคโนโลยี ทั้งงาน 3D Modeling, โมชันกราฟิก, เกมอินเตอร์แอคทีฟ, และการออกแบบดิจิทัลอินเทอร์เฟซ
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-tabs">
+        <button type="button" class="filter-btn active" data-filter="all"><i class="fas fa-border-all me-1"></i> ทั้งหมด (All)</button>
+        <button type="button" class="filter-btn" data-filter="3d"><i class="fas fa-cube me-1"></i> 3D Modeling </button>
+        <button type="button" class="filter-btn" data-filter="motion"><i class="fas fa-film me-1"></i> Motion Graphics &amp; VFX</button>
+        <button type="button" class="filter-btn" data-filter="uiux"><i class="fas fa-mobile-screen-button me-1"></i> UI/UX Design</button>
+        
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="row g-4" id="portfolioContainer">
+
+        <!-- Project 1: 3D Cyber City -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="3d">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/mo.png" alt="3D Modeling" class="project-img">
+              <div class="project-overlay">
+                <button type="button" class="overlay-btn" data-bs-toggle="modal" data-bs-target="#projectModal"
+                  data-title="3D Modeling"
+                  data-category-name="3D Modeling "
+                  data-desc="การออกแบบตัวละคร 3 มิติ  ใน zbrush และเรนเดอร์ความละเอียด full HD "
+                  data-software="zbrush"
+                  data-img="assets/images/mo.png"
+                  title="ดูรายละเอียด">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <span class="tag-badge mb-2">3D Modeling</span>
+                <h5 class="card-title text-white"> 3D Modeling</h5>
+                <p class="text-muted small">การออกแบบตัวละคร 3 มิติ  ใน zbrush และเรนเดอร์ความละเอียด full HD</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-secondary">
+                <span class="small text-secondary"><i class="fas fa-laptop-code me-1"></i>zbrush</span>
+                <button type="button" class="btn btn-sm btn-outline-success border-0 green-highlight p-0" data-bs-toggle="modal" data-bs-target="#projectModal"
+                  data-title="3D Modeling"
+                  data-category-name="3D Modeling "
+                  data-desc="การออกแบบตัวละคร 3 มิติ  ใน zbrush และเรนเดอร์ความละเอียด full HD"
+                  data-software="zbrush"
+                  data-img="assets/images/mo.png">
+                  ดูผลงาน <i class="fas fa-chevron-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Motion Kinetic -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="motion">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/fa.png" alt="FANTA" class="project-img">
+              <div class="project-overlay">
+                <button type="button" class="overlay-btn" data-bs-toggle="modal" data-bs-target="#projectModal"
+                  data-title="FANTA"
+                  data-category-name="Motion Graphics"
+                  data-desc="งานโมชันกราฟิกภาพเคลื่อนไหวที่ซิงค์เข้ากับจังหวะบีทของดนตรีอิเล็กทรอนิกส์ "
+                  data-software="CANVA"
+                  data-img="assets/images/fa.png"
+                  title="ดูรายละเอียด">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <span class="tag-badge mb-2">Motion Graphics</span>
+                <h5 class="card-title text-white">FANTA</h5>
+                <p class="text-muted small">กราฟิกตัวอักษรเคลื่อนไหวสัมพันธ์กับจังหวะคลื่นเสียง สร้างความตื่นเต้นเร้าใจ</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-secondary">
+                <span class="small text-secondary"><i class="fas fa-laptop-code me-1"></i> CANVA</span>
+                <button type="button" class="btn btn-sm btn-outline-success border-0 green-highlight p-0" data-bs-toggle="modal" data-bs-target="#projectModal"
+                  data-title="FANTA"
+                  data-category-name="Motion Graphics"
+                  data-desc="งานโมชันกราฟิกภาพเคลื่อนไหวที่ซิงค์เข้ากับจังหวะบีทของดนตรีอิเล็กทรอนิกส์ "
+                  data-software=" CANVA"
+                  data-img="assets/images/fa.png">
+                  
+                  ดูผลงาน <i class="fas fa-chevron-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: UI/UX NeuraFlow -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="uiux">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/u.png" alt="NeuraFlow AI Mobile App" class="project-img">
+              <div class="project-overlay">
+                <button type="button" class="overlay-btn" data-bs-toggle="modal" data-bs-target="#projectModal"
+                  data-title=" App UI/UX"
+                  data-category-name="UI/UX Design"
+                  data-desc="ออกแบบประสบการณ์ผู้ใช้งาน (User Experience) และส่วนต่อประสาน (UI) สำหรับแอปพลิเคชัน"
+                  data-software="Figma, Adobe Illustrator, Principle Interactive Prototype"
+                  data-img="assets/images/u.png"
+                  title="ดูรายละเอียด">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <span class="tag-badge mb-2">UI/UX Design</span>
+                <h5 class="card-title text-white">App UI/UX</h5>
+                <p class="text-muted small">ระบบออกแบบดีไซน์ซิสเต็มและโปรโตไทป์ระดับไฮไฟดิลิทีสำหรับแอปพลิเคชัน</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-secondary">
+                <span class="small text-secondary"><i class="fas fa-laptop-code me-1"></i> CANVAs</span>
+                <button type="button" class="btn btn-sm btn-outline-success border-0 green-highlight p-0" data-bs-toggle="modal" data-bs-target="#projectModal"
+                  data-title="App UI/UX"
+                  data-category-name="UI/UX Design"
+                  data-desc="ออกแบบประสบการณ์ผู้ใช้งาน (User Experience) และส่วนต่อประสาน (UI) สำหรับแอปพลิเคชัน"
+                  data-software="CANVA"
+                  data-img="assets/images/u.png">
+                  ดูผลงาน <i class="fas fa-chevron-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+      <!-- Bottom Work Process Banner -->
+      <div class="mt-5 pt-4">
+        <div class="glass-card">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+              <span class="section-badge"><i class="fas fa-gears"></i> CREATIVE WORKFLOW</span>
+              
+              <p class="text-secondary mb-3">
+                ทุกผลงานผ่านการวางแผนอย่างเป็นระบบ ตั้งแต่การคิดคอนเซปต์ (Ideation), การวาดสตอรี่บอร์ด (Storyboarding), การสร้าง Asset &amp; Prototype, ไปจนถึงการทดสอบและขัดเกลาผลงานขั้นสุดท้าย (Polishing) เพื่อส่งมอบคุณค่าที่ดีที่สุด
+              </p>
+              
+            </div>
+            <div class="col-lg-6 text-center text-lg-end">
+              <div class="p-4 bg-dark rounded-4 border border-secondary d-inline-block text-start w-100">
+                <h5 class="text-white mb-2"><i class="fas fa-circle-question text-success me-2"></i> สนใจผลงานชิ้นไหนเป็นพิเศษ?</h5>
+                <p class="text-muted small mb-3">คุณสามารถขอรับ Source File หรือชม Showreel วิดีโอความยาวเต็มได้ทางหน้าติดต่อ</p>
+                <a href="contact.html" class="btn-creative-primary w-100 justify-content-center">
+                  <i class="fas fa-comment-dots"></i> สอบถามรายละเอียดผลงาน
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Modal Preview (แสดงรายละเอียดชิ้นงานเมื่อคลิก)
+       ========================================================================= -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="modalProjectTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-glass">
+        <div class="modal-header modal-header-glass">
+          <div>
+            <span class="tag-badge mb-1" id="modalProjectCategory">หมวดหมู่</span>
+            <h4 class="modal-title text-white fw-bold" id="modalProjectTitle">ชื่อผลงาน</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="ปิด"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="rounded-4 overflow-hidden mb-4 border border-secondary" style="max-height: 380px;">
+            <img src="" id="modalProjectImg" alt="ภาพตัวอย่างผลงาน" class="w-100 h-100 object-fit-cover">
+          </div>
+          <h5 class="text-white mb-2"><i class="fas fa-info-circle text-success me-2"></i> คำอธิบายผลงาน</h5>
+          <p class="text-body mb-4" id="modalProjectDesc">รายละเอียดชิ้นงานสื่อนฤมิต</p>
+          
+          <div class="p-3 bg-dark rounded-3 border border-secondary mb-3">
+            <h6 class="green-highlight mb-1"><i class="fas fa-tools me-2"></i> โปรแกรมและเครื่องมือที่ใช้ (Software Stack)</h6>
+            <p class="text-muted small mb-0" id="modalProjectSoftware">ซอฟต์แวร์</p>
+          </div>
+        </div>
+        <div class="modal-footer border-top border-secondary">
+          <button type="button" class="btn btn-secondary px-4 rounded-3" data-bs-dismiss="modal">ปิดหน้าต่าง</button>
+          <a href="contact.html" class="btn-creative-primary">
+            <i class="fas fa-envelope"></i> ติดต่อเกี่ยวกับโปรเจกต์นี้
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Footer (จัดการและแก้ไขข้อความผ่านไฟล์ assets/js/main.js ได้ในที่เดียว)
+       ========================================================================= -->
+  <footer class="footer-custom" id="globalFooter">
+    <div class="container">
+      <p class="footer-copy">© 2026 My Portfolio</p>
+      <p class="footer-designer">Designed by <span>Maxswit</span></p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="backToTopBtn" class="back-to-top" aria-label="กลับสู่ด้านบน">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

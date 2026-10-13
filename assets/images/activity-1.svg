@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <rect width="600" height="400" fill="#09131a"/>
+  <circle cx="300" cy="180" r="70" fill="rgba(0,245,155,0.15)" stroke="#00f59b" stroke-width="2"/>
+  <path d="M280 140 H320 V180 C320 195 300 205 300 205 C300 205 280 195 280 180 Z" fill="#00f59b"/>
+  <path d="M270 145 C250 145 250 170 275 170" fill="none" stroke="#00f59b" stroke-width="3"/>
+  <path d="M330 145 C350 145 350 170 325 170" fill="none" stroke="#00f59b" stroke-width="3"/>
+  <rect x="290" y="205" width="20" height="20" fill="#00f59b"/>
+  <rect x="275" y="225" width="50" height="10" rx="3" fill="#00f59b"/>
+  <text x="30" y="50" fill="#00f59b" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" letter-spacing="2">COMPETITION &amp; AWARDS</text>
+  <text x="30" y="80" fill="#ffffff" font-family="'Prompt', sans-serif" font-weight="700" font-size="22">Creative Media Innovation 2025</text>
+</svg>
+

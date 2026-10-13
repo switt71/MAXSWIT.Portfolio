@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <rect width="600" height="400" fill="#0a141b"/>
+  <circle cx="300" cy="180" r="70" fill="rgba(0,245,155,0.15)" stroke="#00f59b" stroke-width="2"/>
+  <circle cx="300" cy="160" r="16" fill="#00f59b"/>
+  <path d="M275 210 C275 185 325 185 325 210 Z" fill="#00f59b"/>
+  <circle cx="260" cy="170" r="12" fill="rgba(0,245,155,0.6)"/>
+  <circle cx="340" cy="170" r="12" fill="rgba(0,245,155,0.6)"/>
+  <text x="30" y="50" fill="#00f59b" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" letter-spacing="2">SEMINAR &amp; KNOWLEDGE</text>
+  <text x="30" y="80" fill="#ffffff" font-family="'Prompt', sans-serif" font-weight="700" font-size="22">Digital Media Trends 2026</text>
+</svg>
+

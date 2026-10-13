@@ -1,0 +1,1126 @@
+/* ==========================================================================
+   PORTFOLIO - CREATIVE MEDIA (สื่อนฤมิต)
+   Theme: Modern Dark & Neon Green (Glassmorphism & Gradient)
+   Author: Maxswit
+   Year: 2026
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Google Fonts & CSS Variables
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-dark: #080c10;
+  --bg-dark-secondary: #0d131a;
+  --bg-card: rgba(15, 23, 30, 0.72);
+  --bg-card-hover: rgba(20, 32, 42, 0.88);
+  --bg-glass: rgba(18, 28, 38, 0.45);
+  
+  /* Accent Green & Gradients */
+  --accent-green: #00f59b;
+  --accent-green-rgb: 0, 245, 155;
+  --accent-emerald: #10b981;
+  --accent-mint: #6ee7b7;
+  --accent-glow: 0 0 24px rgba(0, 245, 155, 0.4);
+  --accent-glow-sm: 0 0 12px rgba(0, 245, 155, 0.25);
+  
+  --gradient-green: linear-gradient(135deg, #00f59b 0%, #059669 100%);
+  --gradient-text: linear-gradient(135deg, #ffffff 20%, #00f59b 100%);
+  --gradient-dark: linear-gradient(180deg, #080c10 0%, #0d131a 100%);
+
+  /* Border & Glass */
+  --border-glass: rgba(0, 245, 155, 0.16);
+  --border-glass-hover: rgba(0, 245, 155, 0.55);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+  --text-main: #f3f4f6;
+  --text-body: #d1d5db;
+  --text-muted: #8b949e;
+  
+  /* Transitions & Shadows */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 20px 40px -15px rgba(0, 245, 155, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Global Styles
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Background Ambient Lighting Effect */
+.bg-ambient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ambient-blob {
+  position: absolute;
+  filter: blur(120px);
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: floatAmbient 18s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--accent-green);
+  top: -100px;
+  right: -100px;
+}
+
+.blob-2 {
+  width: 600px;
+  height: 600px;
+  background: #047857;
+  bottom: 10%;
+  left: -200px;
+  animation-duration: 22s;
+}
+
+.blob-3 {
+  width: 400px;
+  height: 400px;
+  background: #00d287;
+  top: 45%;
+  right: 15%;
+  opacity: 0.1;
+  animation-duration: 15s;
+}
+
+@keyframes floatAmbient {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.08); }
+  100% { transform: translate(-30px, 40px) scale(0.95); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2c38;
+  border-radius: 5px;
+  border: 2px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.green-highlight {
+  color: var(--accent-green);
+}
+
+p.lead {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+/* Section Header Component */
+.section-header {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(0, 245, 155, 0.08);
+  border: 1px solid var(--border-glass);
+  border-radius: 999px;
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.section-badge i {
+  font-size: 0.9rem;
+}
+
+.section-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Glassmorphism Card System
+   -------------------------------------------------------------------------- */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(0, 245, 155, 0.06), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-glass-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons & Badges
+   -------------------------------------------------------------------------- */
+.btn-creative-primary {
+  background: var(--gradient-green);
+  color: #080c10;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 12px;
+  border: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: var(--accent-glow-sm);
+}
+
+.btn-creative-primary:hover {
+  background: linear-gradient(135deg, #10fba6 0%, #047857 100%);
+  color: #05080c;
+  transform: translateY(-2px);
+  box-shadow: var(--accent-glow);
+}
+
+.btn-creative-outline {
+  background: transparent;
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.btn-creative-outline:hover {
+  background: rgba(0, 245, 155, 0.1);
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+  transform: translateY(-2px);
+}
+
+.tag-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(0, 245, 155, 0.1);
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 245, 155, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   5. Navigation Bar
+   -------------------------------------------------------------------------- */
+.navbar-custom {
+  background: rgba(8, 12, 16, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 0;
+  transition: var(--transition);
+  z-index: 1030;
+}
+
+.navbar-custom.scrolled {
+  padding: 0.75rem 0;
+  background: rgba(8, 12, 16, 0.95);
+  border-bottom-color: var(--border-glass);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--text-main) !important;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-green);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #080c10;
+  font-size: 1.15rem;
+  box-shadow: var(--accent-glow-sm);
+  transition: var(--transition);
+}
+
+.navbar-brand:hover .brand-icon {
+  transform: rotate(10deg) scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.55rem 1.15rem !important;
+  margin: 0 3px;
+  border-radius: 10px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-green);
+  background: rgba(0, 245, 155, 0.05);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--accent-green);
+  font-weight: 700;
+  background: rgba(0, 245, 155, 0.12);
+  border: 1px solid rgba(0, 245, 155, 0.25);
+}
+
+.navbar-toggler {
+  border: 1px solid var(--border-glass);
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero Section (Home Page)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 7rem 0 5rem;
+  position: relative;
+}
+
+.hero-profile-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-glow-ring {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 245, 155, 0.25) 0%, transparent 70%);
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.15); opacity: 0.9; }
+}
+
+.profile-card {
+  position: relative;
+  width: 330px;
+  height: 410px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 2px solid var(--border-glass);
+  box-shadow: var(--shadow-hover);
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  transition: var(--transition);
+}
+
+.profile-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent-green);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.floating-pill {
+  position: absolute;
+  padding: 8px 16px;
+  background: rgba(13, 20, 28, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: 999px;
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  z-index: 2;
+  animation: floatPill 5s ease-in-out infinite alternate;
+}
+
+.pill-1 {
+  top: 15px;
+  left: -20px;
+}
+
+.pill-2 {
+  bottom: 25px;
+  right: -25px;
+  animation-delay: -2.5s;
+}
+
+@keyframes floatPill {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.hero-stats {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-item {
+  padding: 1.25rem;
+  background: rgba(18, 25, 33, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  border-color: var(--border-glass);
+  background: rgba(18, 25, 33, 0.8);
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-green);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Skills & Expertise Grid
+   -------------------------------------------------------------------------- */
+.skill-card {
+  padding: 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  transition: var(--transition);
+  height: 100%;
+  color: #ffffff;
+}
+
+.skill-card h1,
+.skill-card h2,
+.skill-card h3,
+.skill-card h4,
+.skill-card h5,
+.skill-card h6 {
+  color: #ffffff !important;
+}
+
+.skill-card p,
+.skill-card .text-muted {
+  color: #ffffff !important;
+  opacity: 0.95;
+}
+
+.skill-card span {
+  color: #ffffff !important;
+}
+
+.skill-card .green-highlight {
+  color: var(--accent-green) !important;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-hover);
+}
+
+.skill-icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: rgba(0, 245, 155, 0.1);
+  color: var(--accent-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--transition);
+}
+
+.skill-card:hover .skill-icon-box {
+  background: var(--gradient-green);
+  color: #080c10;
+  transform: scale(1.08);
+}
+
+.progress-bar-custom {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar-fill {
+  background: var(--gradient-green);
+  height: 100%;
+  border-radius: 999px;
+  box-shadow: var(--accent-glow-sm);
+  transition: width 1.2s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   8. Education Timeline
+   -------------------------------------------------------------------------- */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(0, 245, 155, 0.1) 0%, rgba(0, 245, 155, 0.8) 50%, rgba(0, 245, 155, 0.1) 100%);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3.5rem;
+  width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  padding-right: 3rem;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  padding-left: 3rem;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 15px;
+  width: 22px;
+  height: 22px;
+  background: #080c10;
+  border: 3px solid var(--accent-green);
+  border-radius: 50%;
+  box-shadow: var(--accent-glow-sm);
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -11px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -11px;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--accent-green);
+  transform: scale(1.3);
+  box-shadow: var(--accent-glow);
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-hover);
+}
+
+.timeline-year {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(0, 245, 155, 0.12);
+  color: var(--accent-green);
+  margin-bottom: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Portfolio Filter & Project Cards
+   -------------------------------------------------------------------------- */
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background: rgba(18, 25, 33, 0.6);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(8px);
+}
+
+.filter-btn:hover {
+  color: var(--accent-green);
+  border-color: var(--border-glass);
+  background: rgba(0, 245, 155, 0.08);
+}
+
+.filter-btn.active {
+  background: var(--gradient-green);
+  color: #080c10;
+  border-color: var(--accent-green);
+  box-shadow: var(--accent-glow-sm);
+}
+
+.project-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #111822;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.08);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(8, 12, 16, 0.2) 0%, rgba(8, 12, 16, 0.9) 100%);
+  opacity: 0;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.overlay-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(8, 12, 16, 0.85);
+  border: 1px solid var(--border-glass);
+  color: var(--accent-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.overlay-btn:hover {
+  background: var(--accent-green);
+  color: #080c10;
+  transform: scale(1.1);
+  box-shadow: var(--accent-glow);
+}
+
+.project-body {
+  padding: 1.6rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   10. Activities & Workshops
+   -------------------------------------------------------------------------- */
+.activity-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-hover);
+}
+
+.activity-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(8, 12, 16, 0.85);
+  border: 1px solid var(--border-glass);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.activity-date {
+  font-size: 0.85rem;
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   11. Contact Page Styles
+   -------------------------------------------------------------------------- */
+.contact-info-card {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: var(--transition);
+  margin-bottom: 1.25rem;
+}
+
+.contact-info-card:hover {
+  transform: translateX(6px);
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-hover);
+}
+
+.contact-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(0, 245, 155, 0.1);
+  color: var(--accent-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.contact-info-card:hover .contact-icon-box {
+  background: var(--gradient-green);
+  color: #080c10;
+}
+
+.social-circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(18, 25, 33, 0.8);
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.social-circle-btn:hover {
+  background: var(--accent-green);
+  color: #080c10;
+  transform: translateY(-4px);
+  box-shadow: var(--accent-glow-sm);
+}
+
+.form-control-custom {
+  background: rgba(12, 17, 23, 0.8);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-control-custom:focus {
+  background: rgba(14, 21, 28, 0.95);
+  border-color: var(--accent-green);
+  box-shadow: var(--accent-glow-sm);
+  color: var(--text-main);
+  outline: none;
+}
+
+.form-control-custom::placeholder {
+  color: #6b7280;
+}
+
+/* --------------------------------------------------------------------------
+   12. Footer
+   -------------------------------------------------------------------------- */
+.footer-custom {
+  background: #05080b;
+  border-top: 1px solid var(--border-subtle);
+  padding: 2.5rem 0;
+  margin-top: auto;
+  text-align: center;
+  position: relative;
+}
+
+.footer-custom p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.footer-copy {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.footer-designer {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.footer-designer span {
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+}
+
+.footer-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(18, 25, 33, 0.7);
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.footer-social-btn:hover {
+  background: var(--accent-green);
+  color: #080c10;
+  transform: translateY(-3px);
+  box-shadow: var(--accent-glow-sm);
+  border-color: var(--accent-green);
+}
+
+/* --------------------------------------------------------------------------
+   13. Modal & Lightbox Preview
+   -------------------------------------------------------------------------- */
+.modal-content-glass {
+  background: rgba(12, 18, 24, 0.96);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 24px;
+  color: var(--text-main);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.modal-header-glass {
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.5rem 2rem;
+}
+
+.btn-close-white {
+  filter: invert(1);
+}
+
+/* --------------------------------------------------------------------------
+   14. Back to Top Button
+   -------------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(15, 23, 30, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  color: var(--accent-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 1000;
+  box-shadow: var(--shadow-card);
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--accent-green);
+  color: #080c10;
+  transform: translateY(-4px);
+  box-shadow: var(--accent-glow);
+}
+
+/* --------------------------------------------------------------------------
+   15. Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding: 5rem 0 3.5rem;
+    text-align: center;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+    max-width: 480px;
+    margin: 2.5rem auto 0;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 19px !important;
+    right: auto !important;
+  }
+
+  .navbar-collapse {
+    background: rgba(10, 15, 20, 0.98);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-title {
+    font-size: 1.85rem;
+  }
+  
+  .profile-card {
+    width: 280px;
+    height: 350px;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .pill-1, .pill-2 {
+    display: none;
+  }
+}
+
